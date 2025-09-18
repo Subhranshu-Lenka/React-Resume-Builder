@@ -1,0 +1,8 @@
+.custom-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 2px solid white;
+  min-height: 50px;
+  border-radius: 20px;
+}

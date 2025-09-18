@@ -9,7 +9,7 @@ Route
 function Router() {
     return (
         <>
-            <div>Router rendering in the App</div>
+            {/* <div>Router rendering in the App</div> */}
             <Routes>
                 <Route path="/" element={<MainLayout />} >
                     <Route index element={<Home />} />
