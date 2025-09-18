@@ -1,14 +1,25 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./mainHeader.css";
 function MainHeader() {
   return (
     <>
       <div className="custom-header">
-        
-        <Link to="/">Home</Link>
-        <Link to="/about">About Us</Link>
+        <NavLink
+          to="/"
+          className={({ isActive }) => (isActive ? "nav-active" : "")}
+        >
+          Home
+        </NavLink>
+
+        <NavLink
+          to="/about"
+          className={({ isActive }) => (isActive ? "nav-active" : "")}
+        >
+          About Us
+        </NavLink>
         <Link to="/contact">Contact Us</Link>
+        <Link to="/contribute">Contribute</Link>
       </div>
     </>
   );
