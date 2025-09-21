@@ -1,4 +1,9 @@
-.hero {
+#first-attempt{
+    display: none;
+}
+
+/* .hero {
+
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -13,4 +18,5 @@
     background-color: rgb(75, 75, 75);
     border: 5px solid white;
     border-radius: 10%;
-}
+} */
+

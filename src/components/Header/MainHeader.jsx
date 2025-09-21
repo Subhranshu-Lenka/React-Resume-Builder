@@ -3,6 +3,7 @@ import "./mainHeader.css";
 function MainHeader() {
   return (
     <>
+      {/* this below div - header has been hidden */}
       <div className=" hidden custom-header">
         <NavLink
           to="/"
