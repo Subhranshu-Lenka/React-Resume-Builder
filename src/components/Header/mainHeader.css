@@ -1,5 +1,6 @@
 .custom-header {
-  display: flex;
+  display: none;
+  /* display: flex; */
   align-items: center;
   justify-content: flex-start;
   gap: 5%;
@@ -10,9 +11,10 @@
   /* font-size: 150px; */
 }
 
-.custom-header > :last-child {
+.custom-header> :last-child {
   margin-left: auto;
 }
+
 /* 
 .nav-active{
     text-decoration: underline 5px solid orange;
@@ -33,4 +35,12 @@
   height: 5px;
   background-color: orange;
   border-radius: 4px;
+}
+
+/* The fuck you mean the navlink renders as an <a> tag in .css file. this is quiet the shit i discovered. */
+.custom-nav-links a:hover {
+  color: white;
+  text-decoration: 2px solid underline orange;
+  text-underline-offset: 5px;
+  transition: all 0.3s ease;
 }
