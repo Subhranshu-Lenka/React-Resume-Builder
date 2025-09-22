@@ -6,7 +6,7 @@ function Home() {
       <section className="hero">
         <div
           className="
-          max-w-full lg:max-w-[1200px] mx-auto text-center p-20
+          max-w-full lg:max-w-[1200px] mx-auto text-center pt-[6%] pb-[3%]
           hero-content-container
           "
         >
@@ -40,12 +40,16 @@ function Home() {
         </div>
       </section>
 
-      <main className="main-content">
+      <main className="main-content mt-[4%] bg-gray-700">
         <section id="templates" className="templates-preview">
           <div className="container">
             <div className="section-header">
               <h2 className="font-bold text-5xl">Professional Resume Templates</h2>
               <p className="text-lg py-[2%]">Choose from our collection of modern, ATS-optimized templates <br /> designed by industry experts</p>
+            </div>
+
+            <div className="templates-grid">
+
             </div>
           </div>
         </section>
