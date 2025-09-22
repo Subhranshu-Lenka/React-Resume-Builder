@@ -40,8 +40,8 @@ function Home() {
             <span className="font-light">Stand Out, &nbsp;</span>
             <span className="font-bold">Get Hired!</span>
           </p>
-    
         </div>
+        
       </section>
     </>
   );
