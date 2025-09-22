@@ -5,7 +5,7 @@ function MainLayout() {
   return (
     <>
       <MainHeader />
-      <div className="min-h-[80vh]">
+      <div id="outlet" className="min-h-[80vh]">
         <Outlet />
       </div>
       <MainFooter />
