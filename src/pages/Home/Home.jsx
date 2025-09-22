@@ -3,20 +3,6 @@ import "./home.css";
 function Home() {
   return (
     <>
-      {/* <p>Welcome to the Home Page!</p> */}
-      <section id="first-attempt" className="hero">
-        <h2 className="text-5xl text-left">
-          Build your&nbsp;
-          <span className="italic font-bold">ATS-beating</span> <br />
-          resume in minutes!
-          <br />
-          <p className="mt-5 italic text-lg font-medium">
-            Craft a perfect resume that gets noticed by the recruiters.
-          </p>
-        </h2>
-        <div className="hero-img"></div>
-      </section>
-
       <section className="hero">
         <div
           className="
@@ -24,7 +10,7 @@ function Home() {
           hero-content-container
           "
         >
-          <h1 className="xl:text-7xl lg:text-6xl md:text-4xl sm:text-3xl font-bold ">
+          <h1 className="xl:text-7xl lg:text-6xl md:text-4xl sm:text-3xl font-bold py-[3%]">
             Build Your Dream Resume in Minutes!
           </h1>
           <p
@@ -45,7 +31,7 @@ function Home() {
             "
           >
             <button className="primary text-lg font-bold px-7 py-[14px] border-none rounded-3xl bg-linear-to-r from-cyan-700 to-cyan-400">
-              Start Building
+              Start Building Now
             </button>
             <button className="primary text-lg font-bold px-7 py-3 border-2 border-white-300 rounded-3xl bg-transparent">
               View Templates
@@ -53,6 +39,19 @@ function Home() {
           </div>
         </div>
       </section>
+
+      <main className="main-content">
+        <section id="templates" className="templates-preview">
+          <div className="container">
+            <div className="section-header">
+              <h2 className="font-bold text-5xl">Professional Resume Templates</h2>
+              <p className="text-lg py-[2%]">Choose from our collection of modern, ATS-optimized templates <br /> designed by industry experts</p>
+            </div>
+          </div>
+        </section>
+
+        <section></section>
+      </main>
     </>
   );
 }
