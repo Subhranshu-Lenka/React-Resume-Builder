@@ -45,7 +45,7 @@ function Home() {
           <div className="container">
             <div className="section-header">
               <h2 className="font-bold text-5xl">Professional Resume Templates</h2>
-              <p className="text-lg py-[2%]">Choose from our collection of modern, ATS-optimized templates <br /> designed by industry experts</p>
+              <p className="text-lg py-[2%]">Choose from our collection of modern, <strong>ATS-optimized</strong> templates <br /> designed by industry experts</p>
             </div>
 
             <div className="templates-grid">
