@@ -1,6 +1,8 @@
+import { useRef } from "react";
 import "./home.css";
 
 function Home() {
+  const templateRef = useRef();
   return (
     <>
       <section className="hero">
@@ -33,23 +35,26 @@ function Home() {
             <button className="primary text-lg font-bold px-7 py-[14px] border-none rounded-3xl bg-linear-to-r from-cyan-700 to-cyan-400">
               Start Building Now
             </button>
-            <button className="primary text-lg font-bold px-7 py-3 border-2 border-white-300 rounded-3xl bg-transparent">
+            <button className="primary text-lg font-bold px-7 py-3 border-2 border-white-300 rounded-3xl bg-transparent"
+              onClick={() => { templateRef.current?.scrollIntoView({ behaviour: "auto" }) }}
+            >
               View Templates
             </button>
           </div>
         </div>
       </section>
 
-      <main className="main-content mt-[4%] bg-gray-700">
+      <main className="main-content mt-[4%] bg-gray-900">
         <section
           id="templates"
+          ref={templateRef}
           className="
           flex justify-center templates-preview
           "
         >
           <div className="container">
             <div className="section-header">
-              <h2 className="font-bold text-5xl">
+              <h2 className="font-bold text-5xl text-slate-700">
                 Professional Resume Templates
               </h2>
               <p className="text-lg py-[2%]">
