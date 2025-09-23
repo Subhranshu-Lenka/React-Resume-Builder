@@ -59,7 +59,16 @@ function Home() {
               </p>
             </div>
 
-            <div className="templates-grid"></div>
+            <div
+              className="
+              grid grid-cols-3 grid-rows-2 gap-4 place-items-center
+              templates-grid
+              "
+            >
+              <div className="template-grid-item p-4 pb-8 bg-red-400 h-[40vh] aspect-[1/1.41]"></div>
+              <div className="template-grid-item p-4 pb-8 bg-red-400 h-[40vh] aspect-[1/1.41]"></div>
+              <div className="template-grid-item p-4 pb-8 bg-red-400 h-[40vh] aspect-[1/1.41]"></div>
+            </div>
           </div>
         </section>
 
