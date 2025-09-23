@@ -30,3 +30,14 @@
         transform: rotate(360deg);
     }
 }
+
+.template-grid-item::before{
+    content: "";
+    position: absolute;
+    /* left: -50%; */
+    /* top: -50%; */
+    border: 2px solid black;
+    height: 30vh;
+    aspect-ratio: 1/1.41;
+    z-index: 3;
+}

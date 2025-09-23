@@ -65,7 +65,7 @@ function Home() {
               templates-grid
               "
             >
-              <div className="template-grid-item p-4 pb-8 bg-red-400 h-[40vh] aspect-[1/1.41]"></div>
+              <div className="template-grid-item relative p-4 pb-8 bg-red-400 h-[40vh] aspect-[1/1.41]"></div>
               <div className="template-grid-item p-4 pb-8 bg-red-400 h-[40vh] aspect-[1/1.41]"></div>
               <div className="template-grid-item p-4 pb-8 bg-red-400 h-[40vh] aspect-[1/1.41]"></div>
             </div>
