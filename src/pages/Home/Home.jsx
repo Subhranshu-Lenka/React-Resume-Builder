@@ -41,16 +41,25 @@ function Home() {
       </section>
 
       <main className="main-content mt-[4%] bg-gray-700">
-        <section id="templates" className="templates-preview">
+        <section
+          id="templates"
+          className="
+          flex justify-center templates-preview
+          "
+        >
           <div className="container">
             <div className="section-header">
-              <h2 className="font-bold text-5xl">Professional Resume Templates</h2>
-              <p className="text-lg py-[2%]">Choose from our collection of modern, <strong>ATS-optimized</strong> templates <br /> designed by industry experts</p>
+              <h2 className="font-bold text-5xl">
+                Professional Resume Templates
+              </h2>
+              <p className="text-lg py-[2%]">
+                Choose from our collection of modern,{" "}
+                <strong>ATS-optimized</strong> templates <br /> designed by
+                industry experts
+              </p>
             </div>
 
-            <div className="templates-grid">
-
-            </div>
+            <div className="templates-grid"></div>
           </div>
         </section>
 
