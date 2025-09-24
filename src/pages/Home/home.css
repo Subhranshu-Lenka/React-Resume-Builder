@@ -1,43 +1,54 @@
 .container {
-    padding: 3%;
+  padding: 3%;
 }
 
 .hero {
-    position: relative;
-    overflow: hidden;
-    padding-bottom: 4rem;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 4rem;
 }
 
 .hero::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle,
-            rgba(113, 113, 113, 0.2) 0%,
-            transparent 70%);
-    animation: rotate 20s linear infinite;
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(113, 113, 113, 0.2) 0%,
+    transparent 70%
+  );
+  animation: rotate 20s linear infinite;
 }
 
 @keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
 
-    100% {
-        transform: rotate(360deg);
-    }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.template-grid-item::before{
-    content: "";
-    position: absolute;
-    /* left: -50%; */
-    /* top: -50%; */
-    border: 2px solid black;
-    height: 30vh;
-    aspect-ratio: 1/1.41;
-    z-index: 3;
+#templates {
+  transition: all 0.4s ease;
+}
+
+#templates:hover {
+  padding-top: 2%;
+  /* background-color: red; */
+}
+
+.template-grid-item::before {
+  content: "";
+  position: absolute;
+  /* left: -50%; */
+  /* top: -50%; */
+  border: 2px solid black;
+  height: 30vh;
+  aspect-ratio: 1/1.41;
+  z-index: 3;
 }
