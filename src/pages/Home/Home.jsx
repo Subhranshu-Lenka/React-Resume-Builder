@@ -63,6 +63,7 @@ function Home() {
               <h2 className="font-bold text-5xl text-slate-500">
                 Professional Resume Templates
               </h2>
+              
               <p className="text-lg py-[2%]">
                 Choose from our collection of modern,{" "}
                 <strong>ATS-optimized</strong> templates <br /> designed by
