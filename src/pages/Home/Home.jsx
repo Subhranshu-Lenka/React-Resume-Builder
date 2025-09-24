@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import useScrollToView from "../../hooks/useScrollToView";
+import TemplateCard from "../../components/TemplateCard/TemplateCard";
 import "./home.css";
 
 function Home() {
@@ -63,7 +64,7 @@ function Home() {
               <h2 className="font-bold text-5xl text-slate-500">
                 Professional Resume Templates
               </h2>
-              
+
               <p className="text-lg py-[2%]">
                 Choose from our collection of modern,{" "}
                 <strong>ATS-optimized</strong> templates <br /> designed by
@@ -80,6 +81,7 @@ function Home() {
               <div className="template-grid-item relative p-4 pb-8 bg-red-400 h-[40vh] aspect-[1/1.41]"></div>
               <div className="template-grid-item p-4 pb-8 bg-red-400 h-[40vh] aspect-[1/1.41]"></div>
               <div className="template-grid-item p-4 pb-8 bg-red-400 h-[40vh] aspect-[1/1.41]"></div>
+              <TemplateCard/>
             </div>
           </div>
         </section>
