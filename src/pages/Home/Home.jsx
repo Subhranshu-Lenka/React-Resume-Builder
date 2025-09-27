@@ -2,11 +2,45 @@ import { useRef } from "react";
 import useScrollToView from "../../hooks/useScrollToView";
 import TemplateCard from "../../components/Cards/TemplateCard";
 import PrimaryBtn from "../../components/Buttons/PrimaryBtn";
+import FeatureCard from "../../components/Cards/FeatureCard";
 import "./home.css";
 
 function Home() {
   const templateRef = useRef();
   const [templateRefe, scrollToTemplate] = useScrollToView();
+
+  const featureData = [
+    {
+      icon: '🚀',
+      title: 'ATS-Optimized',
+      description: 'Our templates are designed to pass Applicant Tracking Systems, ensuring your resume gets seen by human recruiters.'
+    },
+    {
+      icon: '⚡',
+      title: 'Quick & Easy',
+      description: 'Build a professional resume in under 15 minutes with our intuitive drag-and-drop editor and smart suggestions.'
+    },
+    {
+      icon: '🎨',
+      title: 'Professional Design',
+      description: 'Stand out with beautifully crafted templates designed by professionals and loved by recruiters worldwide.'
+    },
+    {
+      icon: '💼',
+      title: 'Industry Specific',
+      description: 'Choose from templates tailored for your specific industry and role, with relevant sections and formatting.'
+    },
+    {
+      icon: '📱',
+      title: 'Mobile Friendly',
+      description: 'Build and edit your resume on any device. Our platform works seamlessly on desktop, tablet, and mobile.'
+    },
+    {
+      icon: '🔒',
+      title: 'Secure & Private',
+      description: 'Your data is encrypted and secure. We never share your information and you maintain complete control.'
+    }
+  ];
   return (
     <>
       <section className="hero">
@@ -102,7 +136,19 @@ function Home() {
                 We make resume building effortless with powerful features and professional results
               </p>
             </div>
-            <div className="grid"></div>
+            <div
+              className="grid grid-cols-3 gap-6
+                place-items-center
+              "
+            >
+              {featureData.map((data) => (
+                <FeatureCard
+                  icon={data.icon}
+                  cardHeader={data.title}
+                  cardContent={data.description}
+                />
+              ))}
+            </div>
           </div>
         </section>
       </main>
