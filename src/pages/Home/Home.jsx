@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import useScrollToView from "../../hooks/useScrollToView";
 import TemplateCard from "../../components/TemplateCard/TemplateCard";
+import PrimaryBtn from "../../components/Buttons/PrimaryBtn";
 import "./home.css";
 
 function Home() {
@@ -35,9 +36,10 @@ function Home() {
             flex justify-center gap-10 relative top-4
             "
           >
-            <button className="primary text-lg font-bold px-7 py-[14px] border-none rounded-3xl bg-linear-to-r from-cyan-700 to-cyan-400">
+            {/* <button className="primary text-lg font-bold px-7 py-[14px] border-none rounded-3xl bg-linear-to-r from-cyan-700 to-cyan-400">
               Start Building Now
-            </button>
+            </button> */}
+            <PrimaryBtn btnLabel="Start Building Now" />
             <button
               className="primary text-lg font-bold px-7 py-3 border-2 border-white-300 rounded-3xl bg-transparent"
               // onClick={() => {
@@ -82,6 +84,8 @@ function Home() {
               <TemplateCard cardTitle="Creative Designer" />
               <TemplateCard cardTitle="Executive Elite" />
             </div>
+
+            <button></button>
           </div>
         </section>
 
