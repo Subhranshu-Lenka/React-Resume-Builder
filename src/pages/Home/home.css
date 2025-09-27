@@ -15,11 +15,9 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(
-    circle,
-    rgba(113, 113, 113, 0.2) 0%,
-    transparent 70%
-  );
+  background: radial-gradient(circle,
+      rgba(113, 113, 113, 0.2) 0%,
+      transparent 70%);
   animation: rotate 20s linear infinite;
 }
 
@@ -40,15 +38,4 @@
 #templates:hover {
   padding-top: 2%;
   /* background-color: red; */
-}
-
-.template-grid-item::before {
-  content: "";
-  position: absolute;
-  /* left: -50%; */
-  /* top: -50%; */
-  border: 2px solid black;
-  height: 30vh;
-  aspect-ratio: 1/1.41;
-  z-index: 3;
 }

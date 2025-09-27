@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import useScrollToView from "../../hooks/useScrollToView";
-import TemplateCard from "../../components/TemplateCard/TemplateCard";
+import TemplateCard from "../../components/Cards/TemplateCard";
 import PrimaryBtn from "../../components/Buttons/PrimaryBtn";
 import "./home.css";
 
@@ -57,7 +57,9 @@ function Home() {
         <section
           id="templates"
           className="
-          flex justify-center templates-preview 
+          flex justify-center 
+          bg-gradient-to-b from-transparent to-black/30
+          templates-preview 
           "
           ref={templateRefe}
         >
@@ -76,7 +78,7 @@ function Home() {
 
             <div
               className="
-              grid grid-cols-3 grid-rows-2 gap-4 place-items-center
+              grid grid-cols-3 gap-1 place-items-center py-3 mb-[3%]
               templates-grid
               "
             >
@@ -85,11 +87,24 @@ function Home() {
               <TemplateCard cardTitle="Executive Elite" />
             </div>
 
-            <button></button>
+            <PrimaryBtn btnLabel="View All Templates" />
           </div>
         </section>
 
-        <section></section>
+        <section className="why-choose-us">
+          <div className="container">
+            <div className="section-header">
+              <h2 className="font-bold text-5xl text-slate-500">
+                Why Build Your CV With Us?
+              </h2>
+
+              <p className="text-lg py-[2%]">
+                We make resume building effortless with powerful features and professional results
+              </p>
+            </div>
+            <div className="grid"></div>
+          </div>
+        </section>
       </main>
     </>
   );

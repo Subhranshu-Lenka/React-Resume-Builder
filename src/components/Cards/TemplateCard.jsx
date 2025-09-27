@@ -1,4 +1,3 @@
-import "./TemplateCard.css";
 function TemplateCard({ cardTitle = "Card" }) {
   return (
     <>
