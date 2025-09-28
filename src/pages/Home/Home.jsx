@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { useOutletContext } from "react-router-dom";
 import useScrollToView from "../../hooks/useScrollToView";
 import TemplateCard from "../../components/Cards/TemplateCard";
 import PrimaryBtn from "../../components/Buttons/PrimaryBtn";
@@ -8,6 +9,7 @@ import "./home.css";
 function Home() {
   const templateRef = useRef();
   const [templateRefe, scrollToTemplate] = useScrollToView();
+  const { featureRef } = useOutletContext();
 
   const featureData = [
     {
@@ -70,15 +72,9 @@ function Home() {
             flex justify-center gap-10 relative top-4
             "
           >
-            {/* <button className="primary text-lg font-bold px-7 py-[14px] border-none rounded-3xl bg-linear-to-r from-cyan-700 to-cyan-400">
-              Start Building Now
-            </button> */}
             <PrimaryBtn btnLabel="Start Building Now" />
             <button
               className="primary text-lg font-bold px-7 py-3 border-2 border-white-300 rounded-3xl bg-transparent"
-              // onClick={() => {
-              //   templateRef.current?.scrollIntoView({ behaviour: "auto" });
-              // }}
               onClick={scrollToTemplate}
             >
               View Templates
@@ -125,7 +121,10 @@ function Home() {
           </div>
         </section>
 
-        <section className="why-choose-us">
+        <section
+          ref={featureRef}
+          className="why-choose-us"
+        >
           <div className="container">
             <div className="section-header">
               <h2 className="font-bold text-5xl text-slate-500">

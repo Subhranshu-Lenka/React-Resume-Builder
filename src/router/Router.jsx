@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import About from "../pages/AboutUs/About";
-import Home from "../pages/Home/Home";  
-import NotPound from "../components/404NotFound/NotPound";
+import Home from "../pages/Home/Home";
+import NotFound from "../components/404NotFound/NotFound";
 // import Home from "../pages/Home/Home"
 
 Route;
@@ -16,7 +16,7 @@ function Router() {
           <Route path="about" element={<About />} />
         </Route>
 
-        <Route path="*" element={<NotPound />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );

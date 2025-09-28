@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import "./mainHeader.css";
-function MainHeader() {
+function MainHeader({onFeatureClick}) {
   return (
     <>
       {/* this below div - header has been hidden */}
@@ -45,7 +45,7 @@ function MainHeader() {
               </li>
               <li>
                 {" "}
-                <NavLink to="/features">Features</NavLink>{" "}
+                <NavLink to="#" onClick={onFeatureClick}>Features</NavLink>{" "}
               </li>
               <li>
                 {" "}
