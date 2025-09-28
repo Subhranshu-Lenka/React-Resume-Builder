@@ -3,11 +3,15 @@ function FeatureCard(
 ) {
     return (
         <>
-            <div className="
-            p-[3%] aspect-[1.2/1] max-w-[75%]
-            border-2 rounded-2xl
-            hover:shadow-cyan-200/50 hover:shadow-xl
-            container">
+            <div
+                className="
+                p-[3%] aspect-[1.2/1] max-w-[75%]
+                border-2 rounded-2xl
+                hover:shadow-cyan-200/50 hover:shadow-xl hover:scale-[1.05]
+                transition-all duration-400 ease-in-out
+                container
+                "
+            >
                 <figure className="text-3xl">
                     <div className="rounded-full aspect-square max-w-fit p-[5%] mx-auto my-3
                     bg-gradient-to-r from-teal-200 to-teal-500">

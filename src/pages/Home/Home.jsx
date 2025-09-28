@@ -122,6 +122,7 @@ function Home() {
         </section>
 
         <section
+          id="features"
           ref={featureRef}
           className="why-choose-us"
         >

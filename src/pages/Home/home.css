@@ -31,11 +31,13 @@
   }
 }
 
-#templates {
+#templates,
+#features {
   transition: all 0.4s ease;
 }
 
-#templates:hover {
+#templates:hover,
+#features:hover {
   padding-top: 2%;
   /* background-color: red; */
 }
