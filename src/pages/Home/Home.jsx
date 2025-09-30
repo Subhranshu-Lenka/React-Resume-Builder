@@ -13,35 +13,41 @@ function Home() {
 
   const featureData = [
     {
-      icon: '🚀',
-      title: 'ATS-Optimized',
-      description: 'Our templates are designed to pass Applicant Tracking Systems, ensuring your resume gets seen by human recruiters.'
+      icon: "🚀",
+      title: "ATS-Optimized",
+      description:
+        "Our templates are designed to pass Applicant Tracking Systems, ensuring your resume gets seen by human recruiters.",
     },
     {
-      icon: '⚡',
-      title: 'Quick & Easy',
-      description: 'Build a professional resume in under 15 minutes with our intuitive drag-and-drop editor and smart suggestions.'
+      icon: "⚡",
+      title: "Quick & Easy",
+      description:
+        "Build a professional resume in under 15 minutes with our intuitive drag-and-drop editor and smart suggestions.",
     },
     {
-      icon: '🎨',
-      title: 'Professional Design',
-      description: 'Stand out with beautifully crafted templates designed by professionals and loved by recruiters worldwide.'
+      icon: "🎨",
+      title: "Professional Design",
+      description:
+        "Stand out with beautifully crafted templates designed by professionals and loved by recruiters worldwide.",
     },
     {
-      icon: '💼',
-      title: 'Industry Specific',
-      description: 'Choose from templates tailored for your specific industry and role, with relevant sections and formatting.'
+      icon: "💼",
+      title: "Industry Specific",
+      description:
+        "Choose from templates tailored for your specific industry and role, with relevant sections and formatting.",
     },
     {
-      icon: '📱',
-      title: 'Mobile Friendly',
-      description: 'Build and edit your resume on any device. Our platform works seamlessly on desktop, tablet, and mobile.'
+      icon: "📱",
+      title: "Mobile Friendly",
+      description:
+        "Build and edit your resume on any device. Our platform works seamlessly on desktop, tablet, and mobile.",
     },
     {
-      icon: '🔒',
-      title: 'Secure & Private',
-      description: 'Your data is encrypted and secure. We never share your information and you maintain complete control.'
-    }
+      icon: "🔒",
+      title: "Secure & Private",
+      description:
+        "Your data is encrypted and secure. We never share your information and you maintain complete control.",
+    },
   ];
   return (
     <>
@@ -121,19 +127,16 @@ function Home() {
           </div>
         </section>
 
-        <section
-          id="features"
-          ref={featureRef}
-          className="why-choose-us"
-        >
-          <div className="container">
+        <section id="features" ref={featureRef} className="why-choose-us">
+          <div className="m-w-full mx-auto  container">
             <div className="section-header">
               <h2 className="font-bold text-5xl text-slate-500">
                 Why Build Your CV With Us?
               </h2>
 
               <p className="text-lg py-[2%]">
-                We make resume building effortless with powerful features and professional results
+                We make resume building effortless with powerful features and
+                professional results
               </p>
             </div>
             <div
