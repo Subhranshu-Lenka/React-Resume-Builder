@@ -1,33 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
 import "./mainHeader.css";
-function MainHeader({onFeatureClick}) {
+function MainHeader({ onFeatureClick }) {
   return (
     <>
-      {/* this below div - header has been hidden */}
-      <div className=" hidden custom-header">
-        <NavLink
-          to="/"
-          className={({ isActive }) => (isActive ? "nav-active" : "")}
-        >
-          Home
-        </NavLink>
-
-        <NavLink
-          to="/about"
-          className={({ isActive }) => (isActive ? "nav-active" : "")}
-        >
-          About Us
-        </NavLink>
-        <Link to="/contact">Contact Us</Link>
-        <Link to="/contribute">Get Started</Link>
-      </div>
-
       <header
         className="bg-[rgb(255,255,255,0.1)] 
-      backdrop-blur-[10px] border-b-[1px] border-b-[white]
-      fixed w-full top-0 left-0 z-100
-      custom-main-header
-      "
+        backdrop-blur-[10px] border-b-[1px] border-b-[white]
+        fixed w-full top-0 left-0 z-100
+        custom-main-header"
       >
         <div
           className="max-w-[1200px] mx-auto py-[20px]
@@ -45,7 +25,9 @@ function MainHeader({onFeatureClick}) {
               </li>
               <li>
                 {" "}
-                <NavLink to="#" onClick={onFeatureClick}>Features</NavLink>{" "}
+                <NavLink to="/" onClick={onFeatureClick}>
+                  Features
+                </NavLink>{" "}
               </li>
               <li>
                 {" "}

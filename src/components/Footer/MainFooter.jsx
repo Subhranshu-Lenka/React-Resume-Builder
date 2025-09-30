@@ -1,9 +1,11 @@
 function MainFooter() {
   return (
     <>
-      <footer className="min-h-[24vh] h-[40vh] px-[18%]">
+      <footer
+        className="min-h-[24vh] px-[18%]
+         border-white border-[1px]"
+      >
         <div className="quick-links-section py-[5vh]">
-          {/* */}
           <nav className="grid grid-cols-3 text-[16px]">
             <div className="links">
               <h4 className="text-xl font-bold mb-3">ResumeForge</h4>
@@ -31,7 +33,7 @@ function MainFooter() {
             </div>
           </nav>
         </div>
-        <hr className="mb-[2%] border-0 border-t-[0.3px] border-gray-500" />
+        <hr className="mb-[2vh] border-0 border-t-[0.3px] border-gray-500" />
         <p className="text-center py-4 copyright">
           © 2025 ResumeForge. All rights reserved.
         </p>
