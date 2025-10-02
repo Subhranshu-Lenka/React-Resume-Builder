@@ -1,5 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import "./mainHeader.css";
+import PrimaryBtn from "../Buttons/PrimaryBtn";
+
 function MainHeader({ onFeatureClick }) {
   return (
     <>
@@ -39,7 +41,11 @@ function MainHeader({ onFeatureClick }) {
               </li>
             </ul>
 
-            <NavLink to="/">Get Started</NavLink>
+            <PrimaryBtn
+              btnLabel="Get Started"
+              btnGradient="from-orange-400 to-amber-700"
+              navigationPath="/login"
+            />
           </nav>
         </div>
       </header>
