@@ -16,7 +16,7 @@ function NotFound() {
     >
       <div>
         <h1 className="text-4xl font-bold p-3">404! Page Not Found</h1>
-        <p>The page <strong>{`**${String(location.pathname).replace("/","")}**`}</strong> that you are looking for, currently does not exist.</p>
+        <p>The page <strong>{`**${String(location.pathname).replace("/", "")}**`}</strong> that you are looking for, currently does not exist.</p>
         <p>
           Please find a way back through the home page.
           <br />
