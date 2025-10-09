@@ -144,7 +144,7 @@ function Home() {
                 place-items-center
               "
             >
-              {featureData.map((data,index) => (
+              {featureData.map((data, index) => (
                 <FeatureCard
                   key={index}
                   icon={data.icon}
