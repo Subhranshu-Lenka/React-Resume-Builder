@@ -28,11 +28,10 @@ function MainHeader({ onFeatureClick }) {
 
             <ul
               className={`
-                 ${
-                   isMenuOpen
-                     ? "flex flex-col gap-8 absolute top-[10vh] right-0 w-fit bg-black shadow-md py-4 px-[16vw]"
-                     : "hidden"
-                 }
+                 ${isMenuOpen
+                  ? "flex flex-col gap-8 absolute top-[10vh] right-0 w-fit bg-black shadow-md py-4 px-[16vw]"
+                  : "hidden"
+                }
                   md:flex md:flex-row md:items-center md:gap-12 md:static md:bg-transparent md:shadow-none
                   custom-nav-links
                 `}
