@@ -54,7 +54,7 @@ function Home() {
       <section className="hero">
         <div
           className="
-          max-w-full lg:max-w-[1200px] mx-auto text-center pt-[6%] pb-[3%]
+          max-w-full lg:max-w-[1200px] mx-auto text-center pt-[10%] pb-[3%]
           hero-content-container
           "
         >

@@ -26,7 +26,6 @@ function MainHeader({ onFeatureClick }) {
             <NavLink to="/" className="text-2xl font-bold">
               ResumeForge {/* Logo | Home Btn*/}
             </NavLink>
-
             <ul
               className={`
                  ${isMenuOpen
@@ -75,7 +74,6 @@ function MainHeader({ onFeatureClick }) {
                 <GiHamburgerMenu size={24} />
               )}
             </button>
-            {/* <GiHamburgerMenu className="h-6 w-auto md:hidden" /> */}
           </nav>
         </div>
       </header>
