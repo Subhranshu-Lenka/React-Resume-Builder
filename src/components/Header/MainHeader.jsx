@@ -17,6 +17,7 @@ function MainHeader({ onFeatureClick }) {
         fixed w-full top-0 left-0 z-100
         custom-main-header"
       >
+        
         <div
           className="max-w-[1200px] mx-auto py-[20px]
         custom-container"
