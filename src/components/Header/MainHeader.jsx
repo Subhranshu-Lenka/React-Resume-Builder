@@ -17,6 +17,7 @@ function MainHeader({ onFeatureClick }) {
         fixed w-full top-0 left-0 z-100
         custom-main-header"
       >
+        
         <div
           className="max-w-[1200px] mx-auto py-[20px]
         custom-container"
@@ -25,14 +26,12 @@ function MainHeader({ onFeatureClick }) {
             <NavLink to="/" className="text-2xl font-bold">
               ResumeForge {/* Logo | Home Btn*/}
             </NavLink>
-
             <ul
               className={`
-                 ${
-                   isMenuOpen
-                     ? "flex flex-col gap-8 absolute top-[10vh] right-0 w-fit bg-black shadow-md py-4 px-[16vw]"
-                     : "hidden"
-                 }
+                 ${isMenuOpen
+                  ? "flex flex-col gap-8 absolute top-[10vh] right-0 w-fit bg-black shadow-md py-4 px-[16vw]"
+                  : "hidden"
+                }
                   md:flex md:flex-row md:items-center md:gap-12 md:static md:bg-transparent md:shadow-none
                   custom-nav-links
                 `}
@@ -75,7 +74,6 @@ function MainHeader({ onFeatureClick }) {
                 <GiHamburgerMenu size={24} />
               )}
             </button>
-            {/* <GiHamburgerMenu className="h-6 w-auto md:hidden" /> */}
           </nav>
         </div>
       </header>
