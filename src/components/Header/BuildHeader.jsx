@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { IoIosArrowBack } from "react-icons/io";
 import SimpleBtn from "../Buttons/SimpleBtn";
 function BuildHeader() {
   return (
@@ -10,10 +11,19 @@ function BuildHeader() {
       >
         <div className="max-w-[1200px] mx-auto py-[20px]">
           <nav className="flex justify-around items-center px-4">
-            <NavLink to="/">Go Back To Home</NavLink>
-            <NavLink to="/template">Change Template</NavLink>
+            <NavLink to="/">
+              <span className="flex items-center">
+                <IoIosArrowBack size={24} />
+                Go Back
+              </span>
+            </NavLink>
             <SimpleBtn
-              btnLabel="Just Checking"
+              btnLabel={
+                <span className="flex items-center">
+                  <IoIosArrowBack size={24} />
+                  Templates
+                </span>
+              }
               btnStyle="bg-[#E0D9D9]"
             />
           </nav>

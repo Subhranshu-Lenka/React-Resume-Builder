@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-function SimpleBtn({ btnLabel = "Label", btnStyle = "", navigationPath }) {
+function SimpleBtn({ btnLabel, btnStyle = "", navigationPath }) {
   const navigate = useNavigate();
 
   const hasBgOverride = btnStyle.includes("bg-");
@@ -25,7 +25,7 @@ function SimpleBtn({ btnLabel = "Label", btnStyle = "", navigationPath }) {
         ${btnStyle}
         `}
     >
-      {`${btnLabel}`}
+      {btnLabel}
     </button>
   );
 }
