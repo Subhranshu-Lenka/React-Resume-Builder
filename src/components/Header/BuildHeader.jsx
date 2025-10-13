@@ -10,7 +10,7 @@ function BuildHeader() {
         fixed w-full top-0 left-0 z-100"
       >
         <div className="max-w-[1200px] mx-auto py-[20px]">
-          <nav className="flex justify-around items-center px-4">
+          <nav className="flex justify-between items-center px-4">
             <NavLink to="/">
               <span className="flex items-center">
                 <IoIosArrowBack size={24} />
@@ -18,12 +18,7 @@ function BuildHeader() {
               </span>
             </NavLink>
             <SimpleBtn
-              btnLabel={
-                <span className="flex items-center">
-                  <IoIosArrowBack size={24} />
-                  Templates
-                </span>
-              }
+              btnLabel="Templates"
               btnStyle="bg-[#E0D9D9]"
             />
           </nav>

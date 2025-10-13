@@ -6,6 +6,7 @@ import Home from "../pages/Home/Home";
 import NotFound from "../components/404NotFound/NotFound";
 import ScrollToTop from "../components/ScrollToTop/ScrollToTop";
 import Login from "../pages/Login/Login";
+import FormBuilding from "../pages/DataInput/FormBuilding";
 
 function Router() {
   return (
@@ -22,7 +23,7 @@ function Router() {
         </Route>
 
         <Route path="/builder" element={<BuildLayout />}>
-
+          <Route index element={<FormBuilding />} />
         </Route>
       </Routes>
     </>

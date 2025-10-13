@@ -1,10 +1,12 @@
+import { Outlet } from "react-router-dom";
 import BuildHeader from "../components/Header/BuildHeader";
-
 function BuildLayout() {
   return (
     <>
       <BuildHeader />
-      <div>BuilderLayout</div>
+      <div className="min-h-[90vh]">
+        <Outlet />
+      </div>
     </>
   );
 }
