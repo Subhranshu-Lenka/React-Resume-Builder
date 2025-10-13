@@ -61,7 +61,7 @@ function MainHeader({ onFeatureClick }) {
               btnLabel="Get Started"
               btnGradient="from-orange-400 to-amber-700"
               btnStyle="hidden md:inline-block"
-              navigationPath="/login"
+              navigationPath="/builder"
             />
 
             {/* Menu Icon Handler */}

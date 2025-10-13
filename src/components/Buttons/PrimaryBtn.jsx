@@ -6,7 +6,7 @@ function PrimaryBtn({ btnLabel = "Label", btnGradient = "", btnStyle = "",naviga
 
   return (
     <button
-      onClick={() => navigate(navigationPath)}
+      onClick={() => (navigationPath ? navigate(navigationPath) : console.error(`navigationPath attribute is not set for ${btnLabel} "Primary" Button`))}
       className={`primary text-lg font-bold px-7 py-[14px] border-none rounded-3xl bg-linear-to-r 
         ${btnGradient ? btnGradient : "from-cyan-700 to-cyan-400"} 
         ${btnStyle}

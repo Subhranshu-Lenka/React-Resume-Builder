@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
+import BuildLayout from "../layouts/BuildLayout";
 import About from "../pages/AboutUs/About";
 import Home from "../pages/Home/Home";
 import NotFound from "../components/404NotFound/NotFound";
@@ -18,6 +19,10 @@ function Router() {
           <Route path="login" element={<Login />} />
 
           <Route path="*" element={<NotFound />} />
+        </Route>
+
+        <Route path="/builder" element={<BuildLayout />}>
+
         </Route>
       </Routes>
     </>
