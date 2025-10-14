@@ -3,7 +3,7 @@ import React from "react";
 function Preview() {
   return (
     <>
-      <div className="preview-container">Preview</div>
+      <div className="border-2 rounded-xl preview-container">Preview</div>
     </>
   );
 }

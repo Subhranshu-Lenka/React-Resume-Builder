@@ -1,5 +1,6 @@
 import { FormProvider, useForm, useFormContext } from "react-hook-form";
 import PersonalInfoForm from "./SubComponents/PersonalInfoForm";
+import EducationForm from "./SubComponents/EducationForm";
 import { email } from "zod";
 function MainForm() {
   // const { register } = useFormContext();
@@ -19,16 +20,18 @@ function MainForm() {
 
   return (
     <>
-      <FormProvider {...methods}>
-        <form
-          action=""
-          onSubmit={methods.handleSubmit(onSubmit)}
-          className="flex flex-col"
-        >
-          <PersonalInfoForm />
-          <label htmlFor="">This is the Form Starting Point</label>
-        </form>
-      </FormProvider>
+      <div className="border-2 rounded-xl form-container">
+        <FormProvider {...methods}>
+          <form
+            action=""
+            onSubmit={methods.handleSubmit(onSubmit)}
+            className="flex flex-col"
+          >
+            <PersonalInfoForm />
+            <EducationForm />
+          </form>
+        </FormProvider>
+      </div>
     </>
   );
 }
