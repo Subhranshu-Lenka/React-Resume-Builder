@@ -7,7 +7,7 @@ function BuildHeader() {
       <header
         className="bg-[rgb(255,255,255,0.1)] 
         backdrop-blur-[10px] border-b-[1px] border-b-[white]
-        fixed w-full top-0 left-0 z-100"
+        w-full top-0 left-0 z-100"
       >
         <div className="max-w-[1200px] mx-auto py-[20px]">
           <nav className="flex justify-between items-center px-4">
