@@ -6,7 +6,7 @@ function PersonalInfoForm() {
     <>
       <section>
         <h2 className="text-xl font-semibold mb-3">Personal Information</h2>
-        <div className="grid grid-cols-[auto_1fr_2%] gap-4 px-4 field-container">
+        <div className="grid grid-cols-[auto_1fr_2%] gap-4 field-container">
           <input
             {...register("photo")}
             placeholder="Profile Pic"

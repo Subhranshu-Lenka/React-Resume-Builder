@@ -21,10 +21,9 @@ function EducationForm() {
             placeholder="Institution"
             className="border rounded px-3 p-2"
           />
-              <button
-                  onClick={() => remove(index)}
-              className="text-red-500"
-              >x</button>
+          <button onClick={() => remove(index)} className="text-red-500">
+            x
+          </button>
         </div>
       ))}
 

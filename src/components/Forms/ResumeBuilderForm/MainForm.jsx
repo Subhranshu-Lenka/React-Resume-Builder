@@ -25,7 +25,7 @@ function MainForm() {
           <form
             action=""
             onSubmit={methods.handleSubmit(onSubmit)}
-            className="flex flex-col"
+            className="flex flex-col mt-6 px-4 gap-4"
           >
             <PersonalInfoForm />
             <EducationForm />
