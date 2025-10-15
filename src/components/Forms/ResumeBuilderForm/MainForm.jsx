@@ -2,6 +2,7 @@ import { FormProvider, useForm, useFormContext } from "react-hook-form";
 import PersonalInfoForm from "./SubComponents/PersonalInfoForm";
 import EducationForm from "./SubComponents/EducationForm";
 import ProfileInfoForm from "./SubComponents/ProfileInfoForm";
+import SkillsForm from "./SubComponents/SkillsForm";
 import { email } from "zod";
 function MainForm() {
   // const { register } = useFormContext();
@@ -11,7 +12,7 @@ function MainForm() {
       email: "",
       education: [{ degree: "", institution: "" }],
       experience: [],
-      skills: [],
+      skills: [{ name: "" }],
     },
   });
 
@@ -30,7 +31,7 @@ function MainForm() {
           >
             <PersonalInfoForm />
             <ProfileInfoForm />
-
+            <SkillsForm />
             <EducationForm />
           </form>
         </FormProvider>
