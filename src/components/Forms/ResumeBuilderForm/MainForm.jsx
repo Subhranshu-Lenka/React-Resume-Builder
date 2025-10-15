@@ -1,6 +1,7 @@
 import { FormProvider, useForm, useFormContext } from "react-hook-form";
 import PersonalInfoForm from "./SubComponents/PersonalInfoForm";
 import EducationForm from "./SubComponents/EducationForm";
+import ProfileInfoForm from "./SubComponents/ProfileInfoForm";
 import { email } from "zod";
 function MainForm() {
   // const { register } = useFormContext();
@@ -28,6 +29,8 @@ function MainForm() {
             className="flex flex-col mt-6 px-4 gap-4"
           >
             <PersonalInfoForm />
+            <ProfileInfoForm />
+
             <EducationForm />
           </form>
         </FormProvider>
