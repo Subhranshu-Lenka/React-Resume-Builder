@@ -3,6 +3,7 @@ import PersonalInfoForm from "./SubComponents/PersonalInfoForm";
 import EducationForm from "./SubComponents/EducationForm";
 import ProfileInfoForm from "./SubComponents/ProfileInfoForm";
 import SkillsForm from "./SubComponents/SkillsForm";
+import WorkExperienceForm from "./SubComponents/WorkExperienceForm";
 import { email } from "zod";
 function MainForm() {
   // const { register } = useFormContext();
@@ -10,9 +11,11 @@ function MainForm() {
     defaultValues: {
       name: "",
       email: "",
-      education: [{ degree: "", institution: "" }],
-      experience: [],
+      education: [{ degree: "", institution: "", graduationDate:"" }],
       skills: [{ name: "" }],
+      experience: [
+        { company: "", role: "", startDate: "", endDate: "", description: "" },
+      ],
     },
   });
 
@@ -32,6 +35,7 @@ function MainForm() {
             <PersonalInfoForm />
             <ProfileInfoForm />
             <SkillsForm />
+            <WorkExperienceForm />
             <EducationForm />
           </form>
         </FormProvider>

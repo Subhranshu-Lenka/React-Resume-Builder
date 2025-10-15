@@ -21,6 +21,12 @@ function EducationForm() {
             placeholder="Institution"
             className="border rounded px-3 p-2"
           />
+          <input
+            {...register(`education.${index}.gradutionDate`)}
+            placeholder="Date of Graduation"
+            className="border rounded px-3 p-2"
+            type="date"
+          />
           <button onClick={() => remove(index)} className="text-red-500">
             x
           </button>
@@ -28,7 +34,9 @@ function EducationForm() {
       ))}
 
       <button
-        onClick={() => append({ degree: "", institution: "" })}
+        onClick={() =>
+          append({ degree: "", institution: "", gradutionDate: "" })
+        }
         className="mt-2 text-blue-500 text-sm"
       >
         + Add Education
