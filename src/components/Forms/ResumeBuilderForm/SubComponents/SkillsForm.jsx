@@ -9,7 +9,7 @@ function SkillsForm() {
   return (
     <>
       <h2 className="text-xl font-semibold mb-3">Skills</h2>
-      <div className="flex gap-3">
+      <div className="flex gap-3 flex-wrap">
         {fields.map((item, index) => (
           <div key={item.id} className="flex gap-1">
             <input
@@ -27,7 +27,7 @@ function SkillsForm() {
 
       <button
         onClick={() => append({ name: "" })}
-        className="mt-2 text-blue-500 text-sm"
+        className="mt-1 text-blue-500 text-sm"
       >
         + Add Skill
       </button>
