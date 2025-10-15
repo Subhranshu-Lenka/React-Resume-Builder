@@ -5,11 +5,13 @@ function SelfResizableTextArea({
   valueTitle,
   placeholderValue,
   isRequired = false,
+  minWidth = 0,
 }) {
   if (
     typeof valueTitle !== "string" ||
     typeof placeholderValue !== "string" ||
     typeof isRequired !== "boolean" ||
+    typeof minWidth !== "number" ||
     !valueTitle ||
     !placeholderValue
   ) {
@@ -23,6 +25,11 @@ function SelfResizableTextArea({
       errors.push(`❌ "placeholderValue" is required`);
     }
 
+    if (typeof minWidth !== "number") {
+      errors.push(
+        `❌ "minWidth" must be a number (received: ${typeof minWidth})`
+      );
+    }
     if (typeof isRequired !== "boolean") {
       errors.push(
         `❌ "isRequired" must be a boolean (received: ${typeof isRequired})`
@@ -67,7 +74,10 @@ function SelfResizableTextArea({
       <textarea
         {...register(`${valueTitle}`, { required: isRequired })}
         placeholder={placeholderValue}
-        className="border rounded px-3 py-2 resize-none overflow-hidden"
+        className={
+          "border rounded px-3 py-2 flex-1 resize-none overflow-hidden"
+        }
+        style={{ minWidth: minWidth > 0 ? `${minWidth}px` : "auto" }}
         ref={textareaRef}
       />
     </>

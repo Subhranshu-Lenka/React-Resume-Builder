@@ -10,7 +10,7 @@ function EducationForm() {
     <div>
       <h2 className="text-xl font-semibold mb-3">Education</h2>
       {fields.map((item, index) => (
-        <div key={item.id} className="flex gap-3 mb-2">
+        <div key={item.id} className="flex flex-wrap gap-3 mb-2">
           <input
             {...register(`education.${index}.degree`)}
             placeholder="Degree"

@@ -1,6 +1,5 @@
-import React from "react";
 import { useFieldArray, useFormContext } from "react-hook-form";
-
+import SelfResizableTextArea from "../../../TextArea/SelfResizableTextArea";
 function WorkExperienceForm() {
   const { register, control } = useFormContext();
   const { fields, append, remove } = useFieldArray({
@@ -45,11 +44,10 @@ function WorkExperienceForm() {
               type="date"
             />
           </fieldset>
-          <textarea
-            {...register(`experience.${index}.description`)}
-            placeholder="Role Description"
-            className="border rounded px-3 py-2 flex-1 min-w-[200px] resize-none"
-            rows={2}
+          <SelfResizableTextArea
+            valueTitle={`experience.${index}.description`}
+                  placeholderValue={"Role Description"}
+                  minWidth={200}
           />
           <button onClick={() => remove(index)} className="text-red-500">
             x
