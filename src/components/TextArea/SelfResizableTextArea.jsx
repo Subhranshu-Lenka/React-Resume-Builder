@@ -78,7 +78,10 @@ function SelfResizableTextArea({
           "border rounded px-3 py-2 flex-1 resize-none overflow-hidden"
         }
         style={{ minWidth: minWidth > 0 ? `${minWidth}px` : "auto" }}
-        ref={textareaRef}
+        ref={(e) => {
+          textareaRef.current = e;
+          register(`${valueTitle}`).ref(e);
+        }}
       />
     </>
   );

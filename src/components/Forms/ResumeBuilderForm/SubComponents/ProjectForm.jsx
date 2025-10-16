@@ -27,7 +27,7 @@ function ProjectForm() {
             <SelfResizableTextArea
               valueTitle={`project.${index}.description`}
               placeholderValue={"Project Description"}
-              isRequired={true}
+              // isRequired={true}
               //   minWidth={200}
             />
 

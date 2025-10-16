@@ -59,7 +59,10 @@ function PersonalInfoForm() {
             placeholder="Address"
             className="border rounded px-3 py-2 resize-none overflow-hidden"
             type="text"
-            ref={textAreaRef}
+            ref={(e) => {
+              textAreaRef.current = e;
+              register("address").ref(e);
+            }}
           />
         </div>
       </section>

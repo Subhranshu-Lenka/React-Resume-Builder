@@ -1,52 +1,69 @@
-import { FormProvider, useForm, useFormContext } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 import PersonalInfoForm from "./SubComponents/PersonalInfoForm";
-import EducationForm from "./SubComponents/EducationForm";
 import ProfileInfoForm from "./SubComponents/ProfileInfoForm";
 import SkillsForm from "./SubComponents/SkillsForm";
 import WorkExperienceForm from "./SubComponents/WorkExperienceForm";
+import EducationForm from "./SubComponents/EducationForm";
 import ProjectForm from "./SubComponents/ProjectForm";
 import CertificationForm from "./SubComponents/CertificationForm";
-import { email } from "zod";
+
+import resumeSchema from "../ZodSchemas/resumeSchema.zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
 function MainForm() {
-  // const { register } = useFormContext();
   const methods = useForm({
+    // resolver: zodResolver(resumeSchema),
+    // mode: "onSubmit",
     defaultValues: {
       name: "",
       email: "",
-      education: [{ degree: "", institution: "", graduationDate: "" }],
+      headline: "",
+      profileLink: "",
+      address: "",
+      profileSummary: "",
       skills: [{ name: "" }],
       experience: [
         { company: "", role: "", startDate: "", endDate: "", description: "" },
       ],
+      education: [{ degree: "", institution: "", graduationDate: "" }],
       project: [{ name: "", description: "", link: "" }],
       certification: [{ name: "", issuedBy: "", link: "" }],
     },
   });
 
-  const onSubmit = (data) => {
+  const handleFormSubmit = (data) => {
+    console.log("✅ Form Submitted Successfully!");
     console.log("Final Resume Data:", data);
   };
 
+  const handleFormError = (errors) => {
+    console.error("❌ Validation Errors:", errors);
+  };
+
   return (
-    <>
-      <div className="border-2 rounded-xl form-container">
-        <FormProvider {...methods}>
-          <form
-            action=""
-            onSubmit={methods.handleSubmit(onSubmit)}
-            className="flex flex-col py-6 px-4 gap-4"
+    <div className="border-2 rounded-xl form-container p-6">
+      <FormProvider {...methods}>
+        <form
+          onSubmit={methods.handleSubmit(handleFormSubmit, handleFormError)}
+          className="flex flex-col gap-4"
+        >
+          <PersonalInfoForm />
+          <ProfileInfoForm />
+          <SkillsForm />
+          <WorkExperienceForm />
+          <EducationForm />
+          <ProjectForm />
+          <CertificationForm />
+
+          <button
+            type="submit"
+            className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-orange-700"
           >
-            <PersonalInfoForm />
-            <ProfileInfoForm />
-            <SkillsForm />
-            <WorkExperienceForm />
-            <EducationForm />
-            <ProjectForm />
-            <CertificationForm />
-          </form>
-        </FormProvider>
-      </div>
-    </>
+            Generate
+          </button>
+        </form>
+      </FormProvider>
+    </div>
   );
 }
 
