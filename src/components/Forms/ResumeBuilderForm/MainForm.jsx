@@ -4,6 +4,8 @@ import EducationForm from "./SubComponents/EducationForm";
 import ProfileInfoForm from "./SubComponents/ProfileInfoForm";
 import SkillsForm from "./SubComponents/SkillsForm";
 import WorkExperienceForm from "./SubComponents/WorkExperienceForm";
+import ProjectForm from "./SubComponents/ProjectForm";
+import CertificationForm from "./SubComponents/CertificationForm";
 import { email } from "zod";
 function MainForm() {
   // const { register } = useFormContext();
@@ -11,11 +13,13 @@ function MainForm() {
     defaultValues: {
       name: "",
       email: "",
-      education: [{ degree: "", institution: "", graduationDate:"" }],
+      education: [{ degree: "", institution: "", graduationDate: "" }],
       skills: [{ name: "" }],
       experience: [
         { company: "", role: "", startDate: "", endDate: "", description: "" },
       ],
+      project: [{ name: "", description: "", link: "" }],
+      certification: [{ name: "", issuedBy: "", link: "" }],
     },
   });
 
@@ -30,13 +34,15 @@ function MainForm() {
           <form
             action=""
             onSubmit={methods.handleSubmit(onSubmit)}
-            className="flex flex-col mt-6 px-4 gap-4"
+            className="flex flex-col py-6 px-4 gap-4"
           >
             <PersonalInfoForm />
             <ProfileInfoForm />
             <SkillsForm />
             <WorkExperienceForm />
             <EducationForm />
+            <ProjectForm />
+            <CertificationForm />
           </form>
         </FormProvider>
       </div>

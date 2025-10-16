@@ -46,8 +46,8 @@ function WorkExperienceForm() {
           </fieldset>
           <SelfResizableTextArea
             valueTitle={`experience.${index}.description`}
-                  placeholderValue={"Role Description"}
-                  minWidth={200}
+            placeholderValue={"Role Description"}
+            minWidth={200}
           />
           <button onClick={() => remove(index)} className="text-red-500">
             x
