@@ -9,30 +9,35 @@ function CertificationForm() {
   });
   return (
     <div>
-      <h2 className="text-xl font-semibold mb-3">Certificate</h2>
+      <h2 className="text-xl font-semibold mb-3">Certifications</h2>
       {fields.map((item, index) => (
-        <div key={item.id} className="grid grid-row-3">
+        <div key={item.id} className="grid grid-cols-2 gap-3">
           <input
             {...register(`certificate.${index}.name`)}
-            placeholder="name"
+            placeholder="Certification Name"
             className="border rounded px-3 py-2"
           />
           <input
             {...register(`certificate.${index}.issuedBy`)}
-            placeholder="issuedBy"
+            placeholder="Issued By"
             className="border rounded px-3 py-2"
           />
-          <input
-            {...register(`certificate.${index}.link`)}
-            placeholder="Certificate Link"
-            className="border rounded px-3 py-2"
-          />
-          <button onClick={() => remove(index)} className="text-red-500">
-            x
-          </button>
+          <div className="col-span-2 grid gap-1">
+            <input
+              {...register(`certificate.${index}.link`)}
+              placeholder="Certification Link"
+              className="border rounded px-3 py-2"
+            />
+            <button onClick={() => remove(index)} className="text-red-500">
+              x
+            </button>
+          </div>
         </div>
       ))}
-      <button onClick={() => append({ name: "", issuedBy: "", link: "" })}>
+      <button
+        className="text-blue-500 text-sm"
+        onClick={() => append({ name: "", issuedBy: "", link: "" })}
+      >
         + Add Certificate
       </button>
     </div>
