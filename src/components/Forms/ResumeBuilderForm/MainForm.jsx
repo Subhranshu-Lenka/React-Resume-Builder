@@ -12,8 +12,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 function MainForm() {
   const methods = useForm({
-    // resolver: zodResolver(resumeSchema),
-    // mode: "onSubmit",
+    resolver: zodResolver(resumeSchema),
+    mode: "onSubmit",
     defaultValues: {
       name: "",
       email: "",
@@ -23,7 +23,7 @@ function MainForm() {
       profileSummary: "",
       skills: [{ name: "" }],
       experience: [
-        { company: "", role: "", startDate: "", endDate: "", description: "" },
+        // { company: "", role: "", startDate: "", endDate: "", description: "" },
       ],
       education: [{ degree: "", institution: "", graduationDate: "" }],
       project: [{ name: "", description: "", link: "" }],

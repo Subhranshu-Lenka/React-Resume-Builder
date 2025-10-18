@@ -27,8 +27,8 @@ function ProjectForm() {
             <SelfResizableTextArea
               valueTitle={`project.${index}.description`}
               placeholderValue={"Project Description"}
-              // isRequired={true}
-              //   minWidth={200}
+              isRequired={true}
+              minWidth={200}
             />
 
             <button onClick={() => remove(index)} className="text-red-500">

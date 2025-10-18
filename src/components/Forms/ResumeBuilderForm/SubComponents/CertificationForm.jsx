@@ -13,18 +13,18 @@ function CertificationForm() {
       {fields.map((item, index) => (
         <div key={item.id} className="grid grid-cols-2 gap-3">
           <input
-            {...register(`certificate.${index}.name`)}
+            {...register(`certification.${index}.name`)}
             placeholder="Certification Name"
             className="border rounded px-3 py-2"
           />
           <input
-            {...register(`certificate.${index}.issuedBy`)}
+            {...register(`certification.${index}.issuedBy`)}
             placeholder="Issued By"
             className="border rounded px-3 py-2"
           />
           <div className="col-span-2 grid gap-1">
             <input
-              {...register(`certificate.${index}.link`)}
+              {...register(`certification.${index}.link`)}
               placeholder="Certification Link"
               className="border rounded px-3 py-2"
             />
