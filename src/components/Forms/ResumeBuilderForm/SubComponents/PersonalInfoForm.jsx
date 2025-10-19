@@ -23,30 +23,39 @@ function PersonalInfoForm() {
             <section className="grid gap-3">
                 <h2 className="text-xl font-semibold mb-3">Personal Information</h2>
                 <div className="grid grid-cols-[auto_1fr] gap-4 field-container">
-                    <input
-                        type="file"
-                        accept="image/*"
-                        {...register("photo", {
-                            required: false,
-                            validate: (files) => {
-                                if (files && files.length > 0) {
-                                    const file = files[0];
-                                    const validType = ["image/jpeg", "image/png", "image/jpg"];
-                                    if (!validType, include(file.type)) {
-                                        return "Only JPG, JPEG, & PNG images are allowed."
-                                    }
 
-                                    if (file.size > 2 * 1024 * 1024) {
-                                        return "File size must be less than 2 MB."
-                                    }
-                                }
-                                return true;
-                            },
-                        })}
+                    <label
+                        htmlFor="photo"
+                        className="border rounded-[50%] px-3 py-2 aspect-square w-30 sm:w-20 md:w-25 grid place-items-center"
+                    >
+                        Profile Pic
+                        <input
+                            id="photo"
+                            type="file"
+                            accept="image/*"
+                            {...register("photo", {
+                                required: false,
+                                validate: (files) => {
+                                    if (files && files.length > 0) {
+                                        const file = files[0];
+                                        const validType = ["image/jpeg", "image/png", "image/jpg"];
+                                        if (!validType, include(file.type)) {
+                                            return "Only JPG, JPEG, & PNG images are allowed."
+                                        }
 
-                        placeholder="Profile Pic"
-                        className="border rounded-[50%] px-3 py-2 aspect-square w-30 sm:w-20 md:w-25"
-                    />
+                                        if (file.size > 2 * 1024 * 1024) {
+                                            return "File size must be less than 2 MB."
+                                        }
+                                    }
+                                    return true;
+                                },
+                            })}
+                            placeholder="Profile Pic"
+                            // className="border rounded-[50%] px-3 py-2 aspect-square w-30 sm:w-20 md:w-25"
+                            className="hidden"
+                        />
+                    </label>
+
                     <div className="grid gap-3 w-full">
                         <input
                             {...register("name", { required: true })}
