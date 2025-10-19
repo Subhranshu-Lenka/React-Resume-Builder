@@ -12,22 +12,27 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 function MainForm() {
   const methods = useForm({
-    // resolver: zodResolver(resumeSchema),
-    // mode: "onSubmit",
+    resolver: zodResolver(resumeSchema),
+    mode: "onSubmit",
     defaultValues: {
       name: "",
       email: "",
+      photo: "",
       headline: "",
       profileLink: "",
       address: "",
       profileSummary: "",
       skills: [{ name: "" }],
-      experience: [
-        { company: "", role: "", startDate: "", endDate: "", description: "" },
-      ],
       education: [{ degree: "", institution: "", graduationDate: "" }],
-      project: [{ name: "", description: "", link: "" }],
-      certification: [{ name: "", issuedBy: "", link: "" }],
+      experience: [
+        // { company: "", role: "", startDate: "", endDate: "", description: "" }, //optional : experience not required
+      ],
+      project: [
+        // { name: "", description: "", link: "" } //optional : project not required
+      ],
+      certification: [
+        // { name: "", issuedBy: "", link: "" }  //optional : certification not required
+      ],
     },
   });
 

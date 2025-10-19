@@ -8,6 +8,10 @@ const resumeSchema = z.object({
 
   email: z.email("Invalid email address"),
 
+  photo: z.any()
+    .refine((fileList) => fileList[0] instanceof File, "Please upload a valid file")
+    .optional(),
+
   headline: z
     .string()
     .min(3, "Headline must be atleast 3 characters")
