@@ -1,8 +1,22 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useFormContext } from "react-hook-form";
 function PersonalInfoForm() {
-    const { register } = useFormContext();
+    const { register, watch } = useFormContext();
     const textAreaRef = useRef(null);
+    const [previewImg, setPreviewImg] = useState(null);
+
+    const file = watch("photo");
+
+    useEffect(() => {
+        if (file && file[0]) {
+            const url = URL.createObjectURL(file[0]);
+            setPreviewImg(url);
+            return () => URL.revokeObjectURL(url); // cleanup
+        }
+        // else {
+        //     setPreviewImg(null);
+        // }
+    }, [file]);
 
     useEffect(() => {
         const textArea = textAreaRef.current;
@@ -18,6 +32,7 @@ function PersonalInfoForm() {
         textArea.addEventListener("input", resize);
         return () => textArea.removeEventListener("input", resize);
     }, []);
+
     return (
         <>
             <section className="grid gap-3">
@@ -26,9 +41,19 @@ function PersonalInfoForm() {
 
                     <label
                         htmlFor="photo"
-                        className="border rounded-[50%] px-3 py-2 aspect-square w-30 sm:w-20 md:w-25 grid place-items-center"
+                        className="relative overflow-hidden cursor-pointer border-3 rounded-[50%] px-3 py-2 aspect-square w-30 sm:w-20 md:w-25 grid place-items-center"
                     >
-                        Profile Pic
+                        {previewImg
+                            ?
+                            <img
+                                src={previewImg}
+                                alt="preview"
+                                className="absolute inset-0 w-full h-auto object-cover"
+                            />
+                            :
+                            <span>Profile Pic</span>
+                        }
+
                         <input
                             id="photo"
                             type="file"
@@ -47,6 +72,7 @@ function PersonalInfoForm() {
                                             return "File size must be less than 2 MB."
                                         }
                                     }
+
                                     return true;
                                 },
                             })}
@@ -54,6 +80,7 @@ function PersonalInfoForm() {
                             // className="border rounded-[50%] px-3 py-2 aspect-square w-30 sm:w-20 md:w-25"
                             className="hidden"
                         />
+
                     </label>
 
                     <div className="grid gap-3 w-full">
