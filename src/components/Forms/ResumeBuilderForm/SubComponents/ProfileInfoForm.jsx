@@ -11,7 +11,7 @@ function ProfileInfoForm() {
         placeholderValue={
           "Enter a concise profile summary (e.g., 3–4 lines about your experience and skills)."
         }
-        // isRequired={true}
+        isRequired={true}
       />
     </>
   );

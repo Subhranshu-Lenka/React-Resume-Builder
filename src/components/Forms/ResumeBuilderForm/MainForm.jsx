@@ -14,6 +14,8 @@ function MainForm() {
   const methods = useForm({
     resolver: zodResolver(resumeSchema),
     mode: "onSubmit",
+    resolver: zodResolver(resumeSchema),
+    mode: "onSubmit",
     defaultValues: {
       name: "",
       email: "",

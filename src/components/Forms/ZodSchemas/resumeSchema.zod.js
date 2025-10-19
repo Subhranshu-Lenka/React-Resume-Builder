@@ -17,7 +17,7 @@ const resumeSchema = z.object({
     .min(3, "Headline must be atleast 3 characters")
     .max(200, "Headline too long"),
 
-  profileLink: z.url("Profile url must ").optional().or(z.literal("")),
+  profileLink: z.url("Profile url must be a valid url").optional().or(z.literal("")),
 
   address: z
     .string()
