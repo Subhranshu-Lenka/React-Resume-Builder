@@ -16,7 +16,8 @@ function SkillsForm() {
             <input
               {...register(`skills.${index}.name`)}
               placeholder="Skill"
-              className={`border rounded px-3 py-2 w-full ${errors.skills?.[index]?.name?.message ? "border-red-500" : ""}`}
+              className={`border rounded px-3 py-2 w-full 
+                `}
               type="text"
             />
             <InputError message={errors.skills?.[index]?.name?.message} />

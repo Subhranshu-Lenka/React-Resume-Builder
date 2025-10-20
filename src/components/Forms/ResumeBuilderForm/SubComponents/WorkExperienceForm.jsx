@@ -1,7 +1,8 @@
 import { useFieldArray, useFormContext } from "react-hook-form";
 import SelfResizableTextArea from "../../../TextArea/SelfResizableTextArea";
+import InputError from "../../InputErrors/InputError";
 function WorkExperienceForm() {
-  const { register, control } = useFormContext();
+  const { register, control, formState: { errors } } = useFormContext();
   const { fields, append, remove } = useFieldArray({
     control,
     name: "experience",
@@ -14,35 +15,43 @@ function WorkExperienceForm() {
           key={item.id}
           className="border rounded-lg p-4 mb-4 flex flex-col md:flex-row md:flex-wrap gap-4 items-start"
         >
-          <input
-            {...register(`experience.${index}.company`)}
-            placeholder="Company Name"
-            className="border rounded px-3 py-2 flex-1"
-            type="text"
-          />
-          <input
-            {...register(`experience.${index}.role`)}
-            placeholder="Role/Designation"
-            className="border rounded px-3 py-2 flex-1"
-            type="text"
-          />
+          <div>
+            <input
+              {...register(`experience.${index}.company`)}
+              placeholder="Company Name"
+              className={`border rounded px-3 py-2 flex-1 ${errors.experience?.[index]?.company ? "border-red-500" : ""}`}
+              type="text"
+            />
+            <InputError message={errors.experience?.[index]?.company?.message} />
+          </div>
+          <div>
+            <input
+              {...register(`experience.${index}.role`)}
+              placeholder="Role/Designation"
+              className={`border rounded px-3 py-2 flex-1 ${errors.experience?.[index]?.role ? "border-red-500" : ""}`}
+              type="text"
+            />
+            <InputError message={errors.experience?.[index]?.role?.message} />
+          </div>
           <fieldset className="flex flex-col">
             <label className="text-sm font-medium mb-1">Start Date</label>
             <input
               {...register(`experience.${index}.startDate`)}
               placeholder="Start Date"
-              className="border rounded px-3 py-2"
+              className={`border rounded px-3 py-2 flex-1 ${errors.experience?.[index]?.startDate ? "border-red-500" : ""}`}
               type="date"
             />
+            <InputError message={errors.experience?.[index]?.startDate?.message} />
           </fieldset>
           <fieldset className="flex flex-col">
             <label className="text-sm font-medium mb-1">End Date</label>
             <input
               {...register(`experience.${index}.endDate`)}
               placeholder="End Date"
-              className="border rounded px-3 py-2"
+              className={`border rounded px-3 py-2 flex-1 ${errors.experience?.[index]?.endDate ? "border-red-500" : ""}`}
               type="date"
             />
+            <InputError message={errors.experience?.[index]?.endDate?.message} />
           </fieldset>
           <SelfResizableTextArea
             valueTitle={`experience.${index}.description`}

@@ -1,9 +1,10 @@
 import React from "react";
 import { useFieldArray, useFormContext } from "react-hook-form";
 import SelfResizableTextArea from "../../../TextArea/SelfResizableTextArea";
+import InputError from "../../InputErrors/InputError";
 
 function ProjectForm() {
-  const { register, control } = useFormContext();
+  const { register, control, formState:{errors} } = useFormContext();
   const { fields, append, remove } = useFieldArray({
     control,
     name: "project",
@@ -13,11 +14,15 @@ function ProjectForm() {
       <h2 className="text-xl font-semibold mb-3">Projects</h2>
       {fields.map((item, index) => (
         <div key={item.id} className="grid grid-cols-2 gap-3">
+          <div>
           <input
             {...register(`project.${index}.name`)}
             placeholder="Project Name"
             className="border rounded px-3 py-2"
           />
+          {/* <InputError message={} /> */}
+          </div>
+          <div></div>
           <input
             {...register(`project.${index}.link`)}
             placeholder="Project Link"

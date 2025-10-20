@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import InputError from "../../InputErrors/InputError";
-function PersonalInfoForm() {
+function 
+PersonalInfoForm() {
     const { register, formState: { errors }, watch, setValue } = useFormContext();
     const textAreaRef = useRef(null);
     const [previewImg, setPreviewImg] = useState(null);
