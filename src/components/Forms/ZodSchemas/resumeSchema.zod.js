@@ -10,7 +10,8 @@ const resumeSchema = z.object({
 
   photo: z.any()
     .refine((fileList) => fileList[0] instanceof File, "Please upload a valid file")
-    .optional(),
+    .optional()
+    .or(z.literal("")),
 
   headline: z
     .string()
