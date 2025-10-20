@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { useFormContext } from "react-hook-form";
+import InputError from "../../InputErrors/InputError";
 function PersonalInfoForm() {
-    const { register, watch, setValue } = useFormContext();
+    const { register, formState: { errors }, watch, setValue } = useFormContext();
     const textAreaRef = useRef(null);
     const [previewImg, setPreviewImg] = useState(null);
 
@@ -45,7 +46,7 @@ function PersonalInfoForm() {
                 <h2 className="text-xl font-semibold mb-3">Personal Information</h2>
                 <div className="grid grid-cols-[auto_1fr] gap-4 field-container">
 
-                    <div className="relative inline-block">
+                    <div className={`relative inline-block ${errors.photo ? "border-red-500" : ""}`}>
                         {previewImg && (
                             <button
                                 onClick={clearPhoto}
@@ -95,47 +96,61 @@ function PersonalInfoForm() {
                                 // className="border rounded-[50%] px-3 py-2 aspect-square w-30 sm:w-20 md:w-25"
                                 className="hidden"
                             />
+                            <InputError message={errors.photo?.message} />
                         </label>
-
-
                     </div>
 
                     <div className="grid gap-3 w-full">
-                        <input
-                            {...register("name", { required: true })}
-                            placeholder="Full name"
-                            className="border rounded px-3 py-2"
-                        />
-                        <input
-                            {...register("email", { required: true })}
-                            placeholder="Email"
-                            className="border rounded px-3 py-2"
-                        />
+                        <div>
+                            <input
+                                {...register("name", { required: true })}
+                                placeholder="Full name"
+                                className={`border rounded px-3 py-2 w-full ${errors.name ? "border-red-500" : ""}`}
+                            />
+                            <InputError message={errors.name?.message} />
+                        </div>
+                        <div>
+                            <input
+                                {...register("email", { required: true })}
+                                placeholder="Email"
+                                className={`border rounded px-3 py-2 w-full ${errors.email ? "border-red-500" : ""}`}
+                            />
+                            <InputError message={errors.email?.message} />
+                        </div>
                     </div>
                 </div>
                 <div className="grid gap-3 w-full">
-                    <input
-                        {...register("headline")}
-                        placeholder="Headline"
-                        className="border rounded px-3 py-2"
-                        type="text"
-                    />
-                    <input
-                        {...register("profileLink")}
-                        placeholder="Profile Link       **Linkedin or Any Social Media Link"
-                        className="border rounded px-3 py-2"
-                        type="text"
-                    />
-                    <textarea
-                        {...register("address")}
-                        placeholder="Address"
-                        className="border rounded px-3 py-2 resize-none overflow-hidden"
-                        type="text"
-                        ref={(e) => {
-                            textAreaRef.current = e;
-                            register("address").ref(e);
-                        }}
-                    />
+                    <div>
+                        <input
+                            {...register("headline")}
+                            placeholder="Headline"
+                            className={`border rounded px-3 py-2 w-full ${errors.headline ? "border-red-500" : ""}`}
+                            type="text"
+                        />
+                        <InputError message={errors.headline?.message} />
+                    </div>
+                    <div>
+                        <input
+                            {...register("profileLink")}
+                            placeholder="Profile Link       **Linkedin or Any Social Media Link"
+                            className={`border rounded px-3 py-2 w-full ${errors.profileLink ? "border-red-500" : ""}`}
+                            type="text"
+                        />
+                        <InputError message={errors.profileLink?.message} />
+                    </div>
+                    <div>
+                        <textarea
+                            {...register("address")}
+                            placeholder="Address"
+                            className={`border rounded px-3 py-2 resize-none overflow-hidden w-full ${errors.profileLink ? "border-red-500" : ""}`}
+                            type="text"
+                            ref={(e) => {
+                                textAreaRef.current = e;
+                                register("address").ref(e);
+                            }}
+                        />
+                        <InputError message={errors.address?.message} />
+                    </div>
                 </div>
             </section>
         </>
