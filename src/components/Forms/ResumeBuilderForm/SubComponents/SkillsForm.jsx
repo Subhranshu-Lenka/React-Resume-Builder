@@ -1,7 +1,8 @@
 import { useFieldArray, useFormContext } from "react-hook-form";
+import InputError from "../../InputErrors/InputError";
 
 function SkillsForm() {
-  const { register, control } = useFormContext();
+  const { register, control, formState: { errors } } = useFormContext();
   const { fields, append, remove } = useFieldArray({
     control,
     name: "skills",
@@ -15,9 +16,10 @@ function SkillsForm() {
             <input
               {...register(`skills.${index}.name`)}
               placeholder="Skill"
-              className="border rounded px-3 py-2"
+              className={`border rounded px-3 py-2 w-full ${errors.skills?.[index]?.name?.message ? "border-red-500" : ""}`}
               type="text"
             />
+            <InputError message={errors.skills?.[index]?.name?.message} />
             <button onClick={() => remove(index)} className="text-red-500">
               x
             </button>

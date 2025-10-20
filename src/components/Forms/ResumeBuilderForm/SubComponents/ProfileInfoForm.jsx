@@ -1,5 +1,3 @@
-import { useState, useRef, useEffect } from "react";
-import { useFormContext } from "react-hook-form";
 import SelfResizableTextArea from "../../../TextArea/SelfResizableTextArea";
 
 function ProfileInfoForm() {

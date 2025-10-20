@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
-import { useFormContext } from "react-hook-form";
+import { useFormContext, } from "react-hook-form";
+import InputError from "../Forms/InputErrors/InputError";
 
 function SelfResizableTextArea({
   valueTitle,
@@ -7,6 +8,10 @@ function SelfResizableTextArea({
   isRequired = false,
   minWidth = 0,
 }) {
+
+  const { register, formState: { errors } } = useFormContext();
+  const textareaRef = useRef(null);
+
   if (
     typeof valueTitle !== "string" ||
     typeof placeholderValue !== "string" ||
@@ -51,9 +56,6 @@ function SelfResizableTextArea({
     );
   }
 
-  const { register } = useFormContext();
-  const textareaRef = useRef(null);
-
   useEffect(() => {
     const textarea = textareaRef.current;
 
@@ -71,18 +73,21 @@ function SelfResizableTextArea({
 
   return (
     <>
-      <textarea
-        {...register(`${valueTitle}`, { required: isRequired })}
-        placeholder={placeholderValue}
-        className={
-          "border rounded px-3 py-2 flex-1 resize-none overflow-hidden"
-        }
-        style={{ minWidth: minWidth > 0 ? `${minWidth}px` : "auto" }}
-        ref={(e) => {
-          textareaRef.current = e;
-          register(`${valueTitle}`).ref(e);
-        }}
-      />
+      <div>
+        <textarea
+          {...register(`${valueTitle}`, { required: isRequired })}
+          placeholder={placeholderValue}
+          className={
+            `border rounded px-3 py-2 flex-1 resize-none overflow-hidden w-full ${errors[`${valueTitle}`] ? "border-red-500" : ""}`
+          }
+          style={{ minWidth: minWidth > 0 ? `${minWidth}px` : "auto" }}
+          ref={(e) => {
+            textareaRef.current = e;
+            register(`${valueTitle}`).ref(e);
+          }}
+        />
+        <InputError message={errors[`${valueTitle}`]?.message} />
+      </div>
     </>
   );
 }
