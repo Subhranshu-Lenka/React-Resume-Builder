@@ -71,6 +71,11 @@ function SelfResizableTextArea({
     return () => textarea.removeEventListener("input", resize);
   }, []);
 
+  // helper to safely access nested error (without lodash)
+  const fieldError = valueTitle
+    .split(".")
+    .reduce((acc, key) => acc?.[key], errors);
+
   return (
     <>
       <div>
@@ -78,7 +83,7 @@ function SelfResizableTextArea({
           {...register(`${valueTitle}`, { required: isRequired })}
           placeholder={placeholderValue}
           className={
-            `border rounded px-3 py-2 flex-1 resize-none overflow-hidden w-full ${errors[`${valueTitle}`] ? "border-red-500" : ""}`
+            `border rounded px-3 py-2 flex-1 resize-none overflow-hidden w-full ${fieldError ? "border-red-500" : ""}`
           }
           style={{ minWidth: minWidth > 0 ? `${minWidth}px` : "auto" }}
           ref={(e) => {
@@ -86,7 +91,7 @@ function SelfResizableTextArea({
             register(`${valueTitle}`).ref(e);
           }}
         />
-        <InputError message={errors[`${valueTitle}`]?.message} />
+        <InputError message={fieldError?.message} />
       </div>
     </>
   );
