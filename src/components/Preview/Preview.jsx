@@ -5,22 +5,29 @@ function Preview() {
 
   return (
     <>
-      <div className="border-2 rounded-xl preview-container">
-        <div className="border p-4 rounded">
-          <h2 className="text-lg font-semibold mb-2">Preview</h2>
-          <p>
-            <strong>Name:</strong> {formData.name}
-          </p>
-          <p>
-            <strong>Email:</strong> {formData.email}
-          </p>
-          <p>
-            <strong>Headline:</strong> {formData.headline}
-          </p>
-          <p>
-            <strong>Skills:</strong>{" "}
-            {formData.skills?.map((s) => s.name).join(", ")}
-          </p>
+      <div className="border-2 rounded-xl preview-container p-4">
+        {/* Actual preview container */}
+        <div className="border p-4">
+          <section className="personal-data">
+            <p>
+              {/* name,email,photo,headline, profile-link, address */}
+              <strong>{formData.name || "John Died"}</strong>
+            </p>
+            <p>
+              <span>{formData.email || "Email Address"}</span>
+              <span>{formData.profileLink || "pro"}</span>
+              <span></span>
+            </p>
+          </section>
+
+          <section className="profile-data">
+            
+          </section>
+          <section className="skills"></section>
+          <section className="experience"></section>
+          <section className="education"></section>
+          <section className="project"></section>
+          <section className="certification"></section>
         </div>
       </div>
     </>
