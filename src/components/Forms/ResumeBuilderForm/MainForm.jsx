@@ -1,4 +1,3 @@
-import { FormProvider, useForm } from "react-hook-form";
 import PersonalInfoForm from "./SubComponents/PersonalInfoForm";
 import ProfileInfoForm from "./SubComponents/ProfileInfoForm";
 import SkillsForm from "./SubComponents/SkillsForm";
@@ -6,35 +5,10 @@ import WorkExperienceForm from "./SubComponents/WorkExperienceForm";
 import EducationForm from "./SubComponents/EducationForm";
 import ProjectForm from "./SubComponents/ProjectForm";
 import CertificationForm from "./SubComponents/CertificationForm";
-
-import resumeSchema from "../ZodSchemas/resumeSchema.zod";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { useFormContext } from "react-hook-form";
 
 function MainForm() {
-  const methods = useForm({
-    resolver: zodResolver(resumeSchema),
-    mode: "onSubmit",
-    defaultValues: {
-      name: "",
-      email: "",
-      photo: "",
-      headline: "",
-      profileLink: "",
-      address: "",
-      profileSummary: "",
-      skills: [{ name: "" }],
-      education: [{ degree: "", institution: "", graduationDate: "" }],
-      experience: [
-        // { company: "", role: "", startDate: "", endDate: "", description: "" }, //optional : experience not required
-      ],
-      project: [
-        // { name: "", description: "", link: "" } //optional : project not required
-      ],
-      certification: [
-        // { name: "", issuedBy: "", link: "" }  //optional : certification not required
-      ],
-    },
-  });
+  const { handleSubmit } = useFormContext();
 
   const handleFormSubmit = (data) => {
     console.log("✅ Form Submitted Successfully!");
@@ -47,9 +21,8 @@ function MainForm() {
 
   return (
     <div className="border-2 rounded-xl form-container p-6">
-      <FormProvider {...methods}>
         <form
-          onSubmit={methods.handleSubmit(handleFormSubmit, handleFormError)}
+          onSubmit={handleSubmit(handleFormSubmit, handleFormError)}
           className="flex flex-col gap-4"
         >
           <PersonalInfoForm />
@@ -67,7 +40,6 @@ function MainForm() {
             Generate
           </button>
         </form>
-      </FormProvider>
     </div>
   );
 }
