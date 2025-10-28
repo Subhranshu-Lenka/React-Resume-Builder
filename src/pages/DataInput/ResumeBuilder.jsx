@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 
 import MainForm from "../../components/Forms/ResumeBuilderForm/MainForm";
@@ -6,6 +7,8 @@ import resumeSchema from "../../components/Forms/ZodSchemas/resumeSchema.zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 function ResumeBuilder() {
+  const [showPreview, setShowPreview] = useState(false);
+
   const methods = useForm({
     resolver: zodResolver(resumeSchema),
     mode: "onChange",
@@ -30,15 +33,60 @@ function ResumeBuilder() {
       ],
     },
   });
+  // return (
+  //   <FormProvider {...methods}>
+  //     <div className="grid grid-cols-2 gap-6 p-4 h-screen ">
+  //       <div className="overflow-y-auto">
+  //         <Preview />
+  //       </div>
+  //       <div className="overflow-y-auto">
+  //         <MainForm />
+  //       </div>
+  //     </div>
+  //   </FormProvider>
+  // );
+
   return (
     <FormProvider {...methods}>
-      <div className="grid grid-cols-2 gap-6 p-4 h-screen ">
+      {/* Large screens: show both form and preview side by side */}
+      <div className="hidden lg:grid lg:grid-cols-2 gap-6 p-4 h-screen">
         <div className="overflow-y-auto">
           <Preview />
         </div>
         <div className="overflow-y-auto">
           <MainForm />
         </div>
+      </div>
+
+      {/* Small/Medium screens: toggle between form and preview */}
+      <div className="block lg:hidden relative h-screen">
+        {/* Main Form (visible when preview is hidden) */}
+        {!showPreview && (
+          <div className="overflow-y-auto h-full">
+            <MainForm />
+            <button
+              type="button"
+              onClick={() => setShowPreview(true)}
+              className="fixed bottom-4 right-4 bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md"
+            >
+              Preview
+            </button>
+          </div>
+        )}
+
+        {/* Preview Overlay (visible when preview is shown) */}
+        {showPreview && (
+          <div className="absolute inset-0 bg-white z-50 overflow-y-auto transition-transform duration-300">
+            <button
+              type="button"
+              onClick={() => setShowPreview(false)}
+              className="absolute top-3 right-3 bg-red-500 rounded-full p-2 hover:bg-red-700"
+            >
+              ✕
+            </button>
+            <Preview />
+          </div>
+        )}
       </div>
     </FormProvider>
   );
