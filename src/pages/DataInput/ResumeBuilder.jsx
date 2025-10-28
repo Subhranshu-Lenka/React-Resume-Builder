@@ -32,9 +32,13 @@ function ResumeBuilder() {
   });
   return (
     <FormProvider {...methods}>
-      <div className="grid grid-cols-2 gap-6 p-4 min-h-[90vh]">
-        <Preview />
-        <MainForm />
+      <div className="grid grid-cols-2 gap-6 p-4 h-screen ">
+        <div className="overflow-y-auto">
+          <Preview />
+        </div>
+        <div className="overflow-y-auto">
+          <MainForm />
+        </div>
       </div>
     </FormProvider>
   );
