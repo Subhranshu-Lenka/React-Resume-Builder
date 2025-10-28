@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react"; src={URL.createObjectURL(data.photo[0])}
 
 function Template1({ data }) {
   return (
@@ -11,7 +11,7 @@ function Template1({ data }) {
             <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
               <div className="flex-1">
                 <h1 className="text-3xl font-bold text-gray-800 mb-2">
-                  {data.name || "John Doe"}
+                  {data.name || "Your Name"}
                 </h1>
                 <p className="text-xl text-blue-600 font-semibold mb-3">
                   {data.headline || "Professional Headline"}
@@ -20,7 +20,7 @@ function Template1({ data }) {
               {data.photo && (
                 <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-gray-300 shadow-md">
                   <img
-                    src={data.photo}
+                    src={URL.createObjectURL(data.photo[0])}
                     alt="Profile"
                     className="w-full h-full object-cover"
                   />
@@ -58,9 +58,10 @@ function Template1({ data }) {
           {/* Profile Summary */}
           <section className="profile-data mb-6">
             <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
-              <p className="text-gray-700 leading-relaxed">
-                {data.profileSummary ||
-                  "Hard-working and results-driven professional with 5+ years of experience in [Your Field]. Proven ability to [Key Skill 1] and [Key Skill 2], with a track record of [Key Achievement]. Seeking to leverage my skills to contribute to a [Type of Company] organization"}
+              <p className="text-gray-700 leading-relaxed whitespace-pre-line text-justify">
+                {data.profileSummary?.trim() ||
+                  `Your profile summary goes here.
+                  `}
               </p>
             </div>
           </section>
