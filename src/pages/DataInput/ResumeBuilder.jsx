@@ -91,7 +91,7 @@ function ResumeBuilder() {
           <button
             type="button"
             onClick={() => setShowPreview(false)}
-            className="absolute top-3 right-3 bg-gray-200 rounded-full p-2 hover:bg-gray-300"
+            className="absolute top-3 right-3 bg-red-500 rounded-full p-2"
           >
             ✕
           </button>

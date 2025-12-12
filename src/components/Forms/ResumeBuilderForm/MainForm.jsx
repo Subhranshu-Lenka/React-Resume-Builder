@@ -37,7 +37,7 @@ function MainForm() {
             type="submit"
             className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-orange-700"
           >
-            Generate
+            Generate PDF
           </button>
         </form>
     </div>
