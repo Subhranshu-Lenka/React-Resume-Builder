@@ -125,8 +125,20 @@ export default function DraggableBtn({
         const newY = e.clientY - offsetRef.current.y;
         setPosition((prev) => {
           // optionally clamp to viewport if desired:
-          const clampedX = Math.max(0, Math.min(window.innerWidth - (btnRef.current?.offsetWidth || 0), newX));
-          const clampedY = Math.max(0, Math.min(window.innerHeight - (btnRef.current?.offsetHeight || 0), newY));
+          const clampedX = Math.max(
+            0,
+            Math.min(
+              window.innerWidth - (btnRef.current?.offsetWidth || 0),
+              newX
+            )
+          );
+          const clampedY = Math.max(
+            0,
+            Math.min(
+              window.innerHeight - (btnRef.current?.offsetHeight || 0),
+              newY
+            )
+          );
           // only update if changed to avoid extra renders
           if (clampedX === prev.x && clampedY === prev.y) return prev;
           return { x: clampedX, y: clampedY };
@@ -166,7 +178,7 @@ export default function DraggableBtn({
         zIndex: 1000,
         touchAction: "none", // important: prevents touch panning while dragging
       }}
-      className={`bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md select-none ${btnStyle}`}
+      className={`bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md select-none cursor-move ${btnStyle}`}
     >
       {btnLabel}
     </button>

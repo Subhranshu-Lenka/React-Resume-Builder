@@ -1,5 +1,3 @@
-// import React from "react"; src={URL.createObjectURL(data.photo[0])}
-
 function Template1({ data }) {
   return (
     <>

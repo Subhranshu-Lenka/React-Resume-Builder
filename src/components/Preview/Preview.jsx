@@ -17,7 +17,7 @@ const Preview = () => {
         .split("/")
         .pop()
         .replace(/\.(jsx|tsx)$/, "")
-        .toLowerCase(); // "template1"
+        .toLowerCase(); 
   
       out[key] = value.default;
     };
@@ -25,16 +25,10 @@ const Preview = () => {
     return out;
   }, [templatesModules]);
 
-  // const templates = {
-  //   template1: <Template1 data={formData} />,
-  //   template2: <Template2 data={formData} />,
-  // };
-  
-
   const SelectedTemplateComponent = templates[selectedTemplate];
 
+  /*  Base Template - base for all the template components - self written */ 
   /*
-    Base Template- base for all the template components- self written
     <>
       <div className="border-2 rounded-xl preview-container p-4">
         // Actual preview container
@@ -148,12 +142,6 @@ const Preview = () => {
     <>
       <div className="preview-container">
         <div className="template-selector flex gap-2 mb-3">
-          {/* <button onClick={() => setSelectedTemplate("template1")}>
-            Modern
-          </button>
-          <button onClick={() => setSelectedTemplate("template2")}>
-            Classic
-          </button> */}
 
           {Object.keys(templates).map((key) => (
             <button key={key} onClick={() => setSelectedTemplate(key)}>
@@ -163,7 +151,6 @@ const Preview = () => {
         </div>
 
         <div className="resume-preview border p-4 rounded bg-white">
-          {/* {templates[selectedTemplate]} */}
           {SelectedTemplateComponent && (
             <SelectedTemplateComponent data={formData} />
           )}
