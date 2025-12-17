@@ -20,7 +20,6 @@ const Preview = () => {
         .toLowerCase(); // "template1"
   
       out[key] = value.default;
-      console.log({ key });
     };
 
     return out;
