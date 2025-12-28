@@ -3,13 +3,18 @@ import { useMemo, useState } from "react";
 
 import TemplateImporter from "./TemplateImporter/TemplateImporter";
 
+//--------------------
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import Template1Pdf from "./PdfTemplates/Template1.pdf";
+//--------------------
+
 const Preview = () => {
   const { control } = useFormContext();
   const formData = useWatch({ control }); // this hook watches every form field.
-  
+
   const [selectedTemplate, setSelectedTemplate] = useState("template1");
   const templatesModules = useMemo(() => Object.entries(TemplateImporter), []);
-  
+
   const templates = useMemo(() => {
     const out = {};
     for (const [path, value] of templatesModules) {
@@ -17,8 +22,8 @@ const Preview = () => {
         .split("/")
         .pop()
         .replace(/\.(jsx|tsx)$/, "")
-        .toLowerCase(); 
-  
+        .toLowerCase();
+
       out[key] = value.default;
     };
 
@@ -27,7 +32,7 @@ const Preview = () => {
 
   const SelectedTemplateComponent = templates[selectedTemplate];
 
-  /*  Base Template - base for all the template components - self written */ 
+  /*  Base Template - base for all the template components - self written */
   /*
     <>
       <div className="border-2 rounded-xl preview-container p-4">
@@ -148,6 +153,15 @@ const Preview = () => {
               {key}
             </button>
           ))}
+        </div>
+
+        <div>
+          <PDFDownloadLink
+            document={<Template1Pdf data={formData} />}
+            fileName="Resume.pdf"
+          >
+            Download PDF
+          </PDFDownloadLink>
         </div>
 
         <div className="resume-preview border p-4 rounded bg-white">
