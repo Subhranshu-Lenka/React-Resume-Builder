@@ -8,7 +8,6 @@ import resumeSchema from "../../components/Forms/ZodSchemas/resumeSchema.zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 function ResumeBuilder() {
-  const [showPreview, setShowPreview] = useState(false);
   const [isPreviewActive, setPreviewActive] = useState(false);
 
   const methods = useForm({
