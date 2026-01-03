@@ -7,6 +7,7 @@ import NotFound from "../components/404NotFound/NotFound";
 import ScrollToTop from "../components/ScrollToTop/ScrollToTop";
 import Login from "../pages/Login/Login";
 import ResumeBuilder from "../pages/DataInput/ResumeBuilder";
+import TestTemplate from "../components/Preview/PdfTemplates/TestTemplate.pdf";
 
 function Router() {
   return (
@@ -24,6 +25,7 @@ function Router() {
 
         <Route path="/builder" element={<BuildLayout />}>
           <Route index element={<ResumeBuilder />} />
+          <Route path="tempUi" element={<TestTemplate />} />
         </Route>
       </Routes>
     </>

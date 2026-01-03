@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import TemplateImporter from "./TemplateImporter/TemplateImporter";
 
 //--------------------
-import { PDFDownloadLink } from "@react-pdf/renderer";
+import { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
 import Template1Pdf from "./PdfTemplates/Template1.pdf";
 //--------------------
 
@@ -164,12 +164,18 @@ const Preview = () => {
           </PDFDownloadLink>
         </div>
 
-        <div className="resume-preview border p-4 rounded bg-white">
+        <div id="preview-item" className="resume-preview border p-4 rounded bg-white">
           {SelectedTemplateComponent && (
             <SelectedTemplateComponent data={formData} />
           )}
 
         </div>
+
+        {/* <div className="pdfView">
+          <PDFViewer>
+            <Template1Pdf />
+          </PDFViewer>
+        </div> */}
       </div>
     </>
   );

@@ -109,22 +109,27 @@ function Template1PDF({ data }) {
     return (
         <Document>
             <Page size="A4" style={styles.page}>
-
                 {/* ===== Header ===== */}
                 <View style={styles.header}>
-                    <Text style={styles.name}>{data.name || "John Doe"}</Text>
-                    <Text style={styles.headline}>
-                        {data.headline || "Professional Headline"}
-                    </Text>
+                    <View>
+                        {/* Name and Headline */}
+                        <Text style={styles.name}>{data?.name || "John Doe"}</Text>
+                        <Text style={styles.headline}>
+                            {data?.headline || "Professional Headline"}
+                        </Text>
+                    </View>
 
                     <View style={styles.contactRow}>
-                        {data.email && <Text style={styles.contactItem}>{data.email}</Text>}
-                        {data.profileLink && (
-                            <Text style={styles.contactItem}>{data.profileLink}</Text>
+                        {data?.email && <Text style={styles.contactItem}>{data?.email}</Text>}
+
+                        {data?.profileLink && (
+                            <Text style={styles.contactItem}>{data?.profileLink}</Text>
                         )}
-                        {data.address && (
-                            <Text style={styles.contactItem}>{data.address}</Text>
+
+                        {data?.address && (
+                            <Text style={styles.contactItem}>{data?.address}</Text>
                         )}
+
                     </View>
                 </View>
 
@@ -132,7 +137,7 @@ function Template1PDF({ data }) {
                 <View style={styles.section}>
                     <Text style={styles.sectionTitle}>Professional Summary</Text>
                     <Text style={styles.bodyText}>
-                        {data.profileSummary ||
+                        {data?.profileSummary ||
                             "Hard-working and results-driven professional with experience delivering measurable results."}
                     </Text>
                 </View>
@@ -140,9 +145,9 @@ function Template1PDF({ data }) {
                 {/* ===== Skills ===== */}
                 <View style={styles.section}>
                     <Text style={styles.sectionTitle}>Skills</Text>
-                    {data.skills?.length ? (
+                    {data?.skills?.length ? (
                         <View style={styles.skillList}>
-                            {data.skills.map((skill, i) => (
+                            {data?.skills.map((skill, i) => (
                                 <Text key={i} style={styles.skillItem}>
                                     {skill.name}
                                 </Text>
@@ -156,8 +161,8 @@ function Template1PDF({ data }) {
                 {/* ===== Experience ===== */}
                 <View style={styles.section}>
                     <Text style={styles.sectionTitle}>Professional Experience</Text>
-                    {data.experience?.length ? (
-                        data.experience.map((exp, i) => (
+                    {data?.experience?.length ? (
+                        data?.experience.map((exp, i) => (
                             <View key={i} style={styles.itemBlock}>
                                 <View style={styles.itemHeader}>
                                     <Text style={styles.role}>{exp.role}</Text>
@@ -177,8 +182,8 @@ function Template1PDF({ data }) {
                 {/* ===== Education ===== */}
                 <View style={styles.section}>
                     <Text style={styles.sectionTitle}>Education</Text>
-                    {data.education?.length ? (
-                        data.education.map((edu, i) => (
+                    {data?.education?.length ? (
+                        data?.education.map((edu, i) => (
                             <View key={i} style={styles.itemHeader}>
                                 <View>
                                     <Text style={styles.role}>{edu.degree}</Text>
@@ -195,8 +200,8 @@ function Template1PDF({ data }) {
                 {/* ===== Projects ===== */}
                 <View style={styles.section}>
                     <Text style={styles.sectionTitle}>Projects</Text>
-                    {data.project?.length ? (
-                        data.project.map((proj, i) => (
+                    {data?.project?.length ? (
+                        data?.project.map((proj, i) => (
                             <View key={i} style={styles.itemBlock}>
                                 <Text style={styles.role}>{proj.name}</Text>
                                 <Text style={styles.description}>{proj.description}</Text>
@@ -213,8 +218,8 @@ function Template1PDF({ data }) {
                 {/* ===== Certifications ===== */}
                 <View style={styles.section}>
                     <Text style={styles.sectionTitle}>Certifications</Text>
-                    {data.certification?.length ? (
-                        data.certification.map((cert, i) => (
+                    {data?.certification?.length ? (
+                        data?.certification.map((cert, i) => (
                             <View key={i} style={styles.itemHeader}>
                                 <View>
                                     <Text style={styles.role}>{cert.name}</Text>
@@ -227,7 +232,6 @@ function Template1PDF({ data }) {
                         <Text style={styles.bodyText}>No certifications added yet.</Text>
                     )}
                 </View>
-
             </Page>
         </Document>
     );
